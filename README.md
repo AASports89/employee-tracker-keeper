@@ -34,7 +34,6 @@ SO THAT I can organize and plan my business
 
 ## Acceptance Criteria
 ---
-
 > **Note:** The following criteria is used to determine if the standards set for **'Employee Tracker Keeper'** have been met:
 
 ```md
