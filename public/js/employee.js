@@ -109,6 +109,11 @@
     };
 
     export {
-        getEmployee, createEmployee, deleteEmployee, getManagers, 
-        getEmployeesForChoices, updateEmployee, getViewEmployeesByQuery
+        getEmployee, 
+        createEmployee, 
+        deleteEmployee, 
+        getManagers, 
+        getEmployeesForChoices, 
+        updateEmployee, 
+        getViewEmployeesByQuery
     };

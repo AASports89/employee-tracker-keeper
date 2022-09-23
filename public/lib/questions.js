@@ -1,36 +1,46 @@
 //PROMPTED QUESTIONS FOR USERS INPUT//
     import inquirer from 'inquirer';
-    import {getRolesForChoices} from '../js/role.js';
-    import {getDepartmentForChoices} from '../js/department.js';
-    import {getManagers, getEmployeesForChoices}  from  '../js/employee.js';
+    import {
+        getRolesForChoices
+            } from '../js/role.js';
+    import {
+        getDepartmentForChoices
+            } from '../js/department.js';
+    import {
+        getManagers, 
+        getEmployeesForChoices
+            } from '../js/employee.js';
 
-    export  class questions {
-        constructor()
-        {
+    export class questions {
+        constructor() {
         this.departments =[];
         this.employees =[];
         this.roles=[];
         this.managers=[];
-        this.options=[{type: 'list',
-                          name : 'operation',
-                          message: 'What would you like to do?',
-                          choices: [
-                                    'View all Employees', 
-                                    'View All Roles',
-                                    'View All Departments',
-                                    'Add Employee', 
-                                    'Update Employee Role',
-                                    'Update Employee Managers',
-                                    'Delete employees',
-                                    'Add Role', 
-                                    'Delete roles',
-                                    'Add Department', 
-                                    'Delete departments',
-                                    'View Employees by Manager', 
-                                    'View Employees by Department',                                     
-                                    'View department used budget', 
-                                    'Quit'
-                                    ]}]; 
+        this.options= 
+            [{
+                type: 
+                'list',
+                name : 'operation',
+                message: 'What would you like to do?',
+                choices: 
+                        [
+                        'View all Employees', 
+                        'View All Roles',
+                        'View All Departments',
+                        'Add Employee', 
+                        'Update Employee Role',
+                        'Update Employee Managers',
+                        'Delete employees',
+                        'Add Role', 
+                        'Delete roles',
+                        'Add Department', 
+                        'Delete departments',
+                        'View Employees by Manager', 
+                        'View Employees by Department',                                     
+                        'View department used budget', 
+                        'Quit'
+                        ]}]; 
         }
 
         async getAddEmployeeQuestions() {

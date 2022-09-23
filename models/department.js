@@ -1,5 +1,7 @@
 //CLASS TO PERFORM MYSQL ON DEPARTMENT//
-    import {TableQuery} from "./TableQuery.js";
+    import {
+        TableQuery
+            } from "./TableQuery.js";
         class Department extends TableQuery {
             constructor() {
             super();
@@ -8,7 +10,5 @@
                 this.selectById = `SELECT * FROM department WHERE id = ?`;
                 this.delete =  `DELETE FROM department WHERE id = ?`;          
             }    
-
         }
-
     export {Department};

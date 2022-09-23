@@ -1,5 +1,7 @@
 //CLASS PERFORM MYSQL ON EMPLOYEES//
-   import {TableQuery} from "./TableQuery.js";
+   import {
+      TableQuery
+         } from "./TableQuery.js";
 
       class Employee extends TableQuery {
          constructor() {
