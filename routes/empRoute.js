@@ -1,14 +1,17 @@
-    import express  from 'express';
-    import {db} from '../db/connection.js';
-    import {Employee} from '../models/employee.js';
-        let router = express.Router();
-        var emp = new Employee();
+    import express from 'express';
+    import {
+        db
+            } from '../db/connection.js';
+    import {
+        Employee
+            } from '../models/employee.js';
+                let router = express.Router();
+                    var emp = new Employee();
 
 //EMP API ROUTE//
     router.get('/employees', (req, res) => {
-    
-    let selectQuery='';
-    let params;
+        let selectQuery='';
+        let params;
 
 //API RETRIEVE SINGLE VAR//
     if(req.query.manager) {
@@ -78,7 +81,6 @@
             res.status(400).json({errorMessage : err});
             return;
             }
-        
             res.json
             ({
                 message: 'success',
@@ -98,13 +100,16 @@
                     ];
     
         console.log(params);
-            db.query(emp.getInsert(), params, (err, result) =>{
+            db.query(emp.getInsert(), params, (err, result) => {
                 if(err) {
-            res.status(400). json({errorMessage: err});
+            res.status(400). json
+            ({
+                errorMessage: err
+            });
             return;
             }
-
-            res.json({
+            res.json
+            ({
                 message : `SUCCESS❕✅ NEW EMPLOYEE RECORD FOR ${req.body.first_name} ${req.body.last_name} ❕✔`,
                 data: req.body
             })
@@ -115,7 +120,6 @@
     router.put('/employees/:id', (req, res) => {
         let query ='';
         let params = '';
-
             if(req.body.role_id) {
                 query = emp.getUpdate();
                 params = [req.body.role_id,req.params.id];
@@ -123,25 +127,24 @@
             } else if(req.body.manager_id) {
                 query = emp.getUpdateByManager();
                 params = [req.body.manager_id,req.params.id];
-        }
-    
-            db.query(query, params, (err, result)=> {
-                if(err) {
-                    res.status(400).json({errorMessage: err});
-                    return;
-                } else if(!result.affectedRows) {
-                    res.json({
-                    message: `ERROR❗ EMPLOYEE RECORD NOT FOUND❗`
+            }
+                db.query(query, params, (err, result)=> {
+            if(err) {
+                res.status(400).json({errorMessage: err});
+                return;
+            } else if(!result.affectedRows) {
+                res.json({
+                message: `ERROR❗ EMPLOYEE RECORD NOT FOUND❗`
                 });
-                } else {
-                    res.json
-                    ({
-                        message: `SUCCESS❕✅ EMPLOYEE RECORD UPDATED❕⌛`,
-                        changes : result.affectedRows,
-                        data: req.body
-                    });
-                };
-            });
+            } else {
+                res.json
+                ({
+                    message: `SUCCESS❕✅ EMPLOYEE RECORD UPDATED❕⌛`,
+                    changes : result.affectedRows,
+                    data: req.body
+                });
+            };
+        });
     });
 
     router.delete('/employees/:id', (req, res) => {
@@ -149,12 +152,12 @@
 
             db.query(emp.getDelete(), params, (err, result) => {
                 if(err) {
-                    res.status(400).json({errorMessage : err});
+                        res.status(400).json({errorMessage : err});
                     return;
-                } else if(!result.affectedRows) {
-                    res.json({message: "Employee record not found"});
-                } else {
-                    res.json
+                    } else if(!result.affectedRows) {
+                        res.json({message: "Employee record not found"});
+                    } else {
+                        res.json
                     ({
                         message: `WARNING❗ ⛔ EMPLOYEE RECORD DELETED❗ ❌`,
                         changes : result.affectedRows,
