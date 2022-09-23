@@ -49,7 +49,7 @@
         }
             res.json
             ({
-                message: `New department ${req.body.name} created successfully`,
+                message: `SUCCESS❕✅ NEW DEPARTMENT ${req.body.name} CREATED❕⌛`,
                 data: req.body
             });
         });
@@ -63,11 +63,11 @@
             res.status(400).json({errorMessage: error});
             return;
             } else if(!result.affectedRows ) {
-            res.json({message: "Department record not found for delete"});
+            res.json({message: "ERROR❗ NO DEPARTMENT LOCATED❗"});
             } else {
             res.json
             ({
-                message: `Department deleted successfully`,
+                message: `WARNING❗ ⛔ EMPLOYEE RECORD DELETED❗ ❌`,
                 changes: result.affectedRows,
                 id: req.params.body
             });

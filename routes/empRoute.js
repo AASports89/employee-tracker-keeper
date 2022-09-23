@@ -105,7 +105,7 @@
             }
 
             res.json({
-                message : `New employee record created for ${req.body.first_name} ${req.body.last_name}`,
+                message : `SUCCESS❕✅ NEW EMPLOYEE RECORD FOR ${req.body.first_name} ${req.body.last_name} ❕✔`,
                 data: req.body
             })
 
@@ -131,12 +131,12 @@
                     return;
                 } else if(!result.affectedRows) {
                     res.json({
-                    message: `Employee record not found`
+                    message: `ERROR❗ EMPLOYEE RECORD NOT FOUND❗`
                 });
                 } else {
                     res.json
                     ({
-                        message: `Employee record updated`,
+                        message: `SUCCESS❕✅ EMPLOYEE RECORD UPDATED❕⌛`,
                         changes : result.affectedRows,
                         data: req.body
                     });
@@ -156,7 +156,7 @@
                 } else {
                     res.json
                     ({
-                        message: `Employee record deleted`,
+                        message: `WARNING❗ ⛔ EMPLOYEE RECORD DELETED❗ ❌`,
                         changes : result.affectedRows,
                         id: req.params.id
                     });

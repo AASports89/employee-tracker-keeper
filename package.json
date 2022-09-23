@@ -1,0 +1,36 @@
+{
+  "name": "employee-tracker-keeper",
+  "version": "1.0.0",
+  "description": "A brief description about the application.",
+  "main": "index.js",
+  "directories": {
+    "tests": "tests"
+  },
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "console.table": "^0.10.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "figlet": "^1.5.2",
+    "inquirer": "^8.2.4",
+    "jest": "^27.5.1",
+    "mysql2": "^2.3.3",
+    "node-fetch": "^3.2.3"
+  },
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AASports89/"
+  },
+  "keywords": [],
+  "author": "AASports89",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AASports89/"
+  },
+  "homepage": "https://github.com/AASports89/",
+  "devDependencies": {}
+}
