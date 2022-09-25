@@ -109,7 +109,7 @@ THEN I am prompted to select an employee to update and their new role and this i
 ---
 > **Note:** The following video shows a walkthrough  of the application being used from the command line:
 
-https://aasports89.github.io/git-employee-summary-walkthrough/
+https://aasports89.github.io/employee-tracker-keeper/
 
 ## GitHUB Repository
 ---
