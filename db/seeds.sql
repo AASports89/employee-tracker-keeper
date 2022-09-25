@@ -1,35 +1,37 @@
 USE employee_db;
 
 INSERT INTO department (name) 
-    VALUES ('Sales'),
-          ('Engineering'), 
-          ('Finance'), 
-          ('Legal'), 
-          ('HR');
+    VALUES  
+        ("Management"),
+        ("Marketing"),
+        ("Human Resources"),
+        ("Sales")
+        ("Accounting");
 
-INSERT INTO role 
-    (title, salary, department_id)
+INSERT INTO roles (title, salary, department_id)
     VALUES
-    ('Sales Person', '65000', 1),
-    ('Manager', '85000', 1),
-    ('Lead Engineer', '78000', 2),
-    ('Software Engineer', '68000',2),
-    ('Software Manager', '90000', 2),
-    ('Account Manager', '92000', 3),
-    ('Accountant', '70000', 3),
-    ('Legal Team Lead', '88000', 3),
-    ('Lawyer', '79000', 3);
+        ("General Manager", 520000, 1),
+        ("Accountant", 200000, 2),
+        ("Publicist", 240000, 3),
+        ("Sales Lead", 120000, 4),
+        ("Human Resources Lead", 140000, 5),
+        ("Salesman", 180000, 6),
+        ("Junior Accountant", 130000, 7),
+        ("Analyst", 100000, 8),
+        ("Tester", 100000, 9);
 
-INSERT INTO employee
-    (first_name, last_name, role_id, manager_id)
+
+INSERT INTO employee (first_name, last_name, role_id, manager_id) 
     VALUES
-    ('Michael', 'Jordan', 2, NUll),
-    ('Kobe', 'Bryant', 1, 1),
-    ('Shaquille', 'Oneal', 1,1),
-    ('Steve', 'Nash',5 , NULL),
-    ('Jerry', 'West', 4,4),
-    ('John', 'Stockton', 3, 4),
-    ('Karl', 'Malone',6,NULL),
-    ('Scottie', 'Pippen',7, 7),
-    ('Eddie', 'Jones', 8, NUll),
-    ('Vince', 'Carter', 9, 9);
+        ("Michael", "Corleone", 1, null),
+        ("Tony", "Montana", 2, 1),
+        ("Sam", "Rothstein", 2, 1),
+        ("George", "Jung", 1, null),
+        ("Pablo", "Escobar", 3, 6),
+        ("Henry", "Hill", 3, 6),
+        ("Nicky", "Santorro", 5, null),
+        ("Jimmy", "Burke", 6, null),
+        ("Vito", "Corleone", 7, null),
+        ("Jeff", "Bezos", 8, 6),
+        ("Elon", "Musk", 8, 6),
+        ("Tony", "Soprano", 9, 7),

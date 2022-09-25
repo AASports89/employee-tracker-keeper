@@ -1,30 +1,24 @@
 {
   "name": "employee-tracker-keeper",
   "version": "1.0.0",
-  "description": "A content management system, utilizing Express.js, Inquirer v8.2.4, mySQL2, Node.js & dotenv.",
-  "directories": {
-    "tests": "tests"
-  },
-  "dependencies": {
-    "chalk": "^5.0.1",
-    "console.table": "^0.10.0",
-    "dotenv": "^16.0.2",
-    "express": "^4.18.1",
-    "fetch": "^1.1.0",
-    "figlet": "^1.5.2",
-    "inquirer": "^8.2.4",
-    "jest": "^27.5.1",
-    "mysql2": "^2.3.3",
-    "node-fetch": "^3.2.3"
-  },
+  "description": "A CMS system powered by command lines via Express.js, Inquirer v8.2.4 & mySQL.",
+  "main": "index.js",
   "repository": {
-    "url": "git+https://github.com/AASports89/"
+    "type": "git",
+    "url": "git+https://github.com/AASports89/employee-tracker-keeper.git"
   },
   "keywords": [],
-  "author": "AASports89",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AASports89/"
+    "url": "https://github.com/AASports89/employee-tracker-keeper/issues"
   },
-  "homepage": "https://github.com/AASports89/"
+  "homepage": "https://github.com/AASports89/employee-tracker-keeper#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "express": "^4.18.1",
+    "inquirer": "^8.2.4",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3"
+  }
 }
