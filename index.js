@@ -18,7 +18,7 @@
     employeeView();
     });
   
-//DISPLAY EMPLOYEES//
+//SUCCESSFUL CONNECTION TO DB --> DISPLAY WORKING MENU//
     function employeeView() {
         inquirer.prompt ({
                         name: "action",
@@ -36,6 +36,7 @@
                                 "Exit Program ⛔"
                                 ]
         })
+//SELECTION OF APP PROCESSES FROM MENU//
             .then(function(input) {
                 switch (input.action) {
                     case "Add Department 💾": 
@@ -198,7 +199,7 @@
             if (err) throw err; console.table(res); employeeView();
         });
     };
-//DISPLAY EMPLOYEES//
+//DISPLAY EMPLOYEES --> JOINING OF TABLES & DATA//
     const viewEmployees = () => {
         connection.query ( 
                         `SELECT
@@ -274,13 +275,14 @@
         res.forEach(element => {
         employees.push(`${element.id} ${element.first_name} ${element.last_name}`);
         });
-    inquirer.prompt({
+    inquirer.prompt ({
             name: "deletedEmployee", 
             type: "list", 
             message: "Please select employee to delete ❌.", 
             choices: employees
         })
             .then(response => {
+//DISPLAYS THE DELETED EMPLOYEE W/ ID DATA//
                 let deletedEmployeeId = parseInt(response.deletedEmployee)
             connection.query(`DELETE FROM employee WHERE id = ${deletedEmployeeId}`,
                 (err, res) => {
