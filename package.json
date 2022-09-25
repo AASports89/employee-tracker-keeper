@@ -7,7 +7,11 @@
     "type": "git",
     "url": "git+https://github.com/AASports89/employee-tracker-keeper.git"
   },
-  "keywords": [],
+  "keywords": [
+    "npm i",
+    "node",
+    "^c"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
