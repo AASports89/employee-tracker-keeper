@@ -38,15 +38,33 @@
         })
             .then(function(input) {
                 switch (input.action) {
-                    case "Add Department 💾": addDepartment(); break;
-                    case "Add Role 💾": addRole(); break;
-                    case "Add Employee 💾": addEmployee(); break;
-                    case "View Departments 🔎": viewDepartments(); break;
-                    case "View Roles 🔎": viewRoles(); break;
-                    case "View Employees 🔎": viewEmployees(); break;
-                    case "Update Employee Role 🗂": updateEmployeeRole(); break;
-                    case "Delete Employee ❌": deleteEmployee(); break;            
-                    case "Exit Program ⛔": connection.end(); break;
+                    case "Add Department 💾": 
+                    addDepartment(); 
+                    break;
+                    case "Add Role 💾": 
+                    addRole(); 
+                    break;
+                    case "Add Employee 💾": 
+                    addEmployee(); 
+                    break;
+                    case "View Departments 🔎": 
+                    viewDepartments(); 
+                    break;
+                    case "View Roles 🔎": 
+                    viewRoles(); 
+                    break;
+                    case "View Employees 🔎": 
+                    viewEmployees(); 
+                    break;
+                    case "Update Employee Role 🗂": 
+                    updateEmployeeRole(); 
+                    break;
+                    case "Delete Employee ❌": 
+                    deleteEmployee(); 
+                    break;            
+                    case "Exit Program ⛔": 
+                    connection.end(); 
+                    break;
                 }
             });
     }
@@ -90,8 +108,9 @@
             type: "input", 
             message: "Please enter salary 💰 for role.",
                 validate: (input) => {
-                if (!input) {return "Error❗ Please enter valid salary 💰 title❗";}
-                return true;
+                if (input=/^\d+$/) {
+                    return true;
+                } else {return "Error❗ Please enter valid salary 💰 title❗";}
             },
             },
         {
@@ -99,8 +118,9 @@
             type: "input", 
             message: "Enter department ID number for new role title.",
             validate: (input) => {
-                if (!input) {return "Error❗ Please enter valid ID ❗";}
-                return true;
+                if (input=/^\d+$/) {
+                    return true;
+                } else {return "Error❗ Please enter valid ID ❗";}
             },
         }
     ])
@@ -144,8 +164,9 @@
             type: "input", 
             message: "Please enter role ID.",
             validate: (input) => {
-                if (!input) {return "Error❗ Please enter valid role ID ❗";}
-                return true;
+                if (input=/^\d+$/) {
+                    return true;
+                } else {return "Error❗ Please enter valid role ID ❗";}  
             },
         }
     ])
@@ -179,7 +200,7 @@
     };
 //DISPLAY EMPLOYEES//
     const viewEmployees = () => {
-        connection.query( 
+        connection.query ( 
                         `SELECT
                         distinct (e.id),
                         CONCAT (e.first_name,' ',e.last_name) AS employee_name,
@@ -210,10 +231,11 @@
                     {
                         name: "employeeId",
                         type: "input",
-                        message: "Enter the Employee ID number to be updated to new role.",
+                        message: "Enter the employee ID to be updated to role.",
                         validate: (input) => {
-                        if (!input) {return "Error❗ Please enter valid employee ID ❗"; }
-                        return true;
+                        if (input=/^\d+$/) {
+                            return true;
+                        } else {return "Error❗ Please enter valid employee ID ❗";}
                         },
                     },
                     {
@@ -221,8 +243,9 @@
                     type: "input",
                     message: "Enter new department ID number for the selected employee.",
                     validate: (input) => {
-                    if (!input) {return "Error❗ Please enter valid department ID ❗";}
-                    return true;
+                        if (input=/^\d+$/) {
+                            return true;
+                        } else {return "Error❗ Please enter valid department ID ❗";}
                         },
                     },
                 ])
